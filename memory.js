@@ -43,5 +43,7 @@ class Memory {
       this.memory[ptr] = value;
     }
   }
+
+
   
   module.exports = Memory;

@@ -127,7 +127,7 @@ const maxSum = (arr) =>{
     return sum
 }
 
-console.log(maxSum([4, 6, -3, 5, -2, 1]))
+//console.log(maxSum([4, 6, -3, 5, -2, 1]))
 
 
 //8. Merge arrays
@@ -142,7 +142,7 @@ const mergeArrays = (arr1, arr2) =>{
     return mergedArr ;
 }
 
-console.log(mergeArrays([1,2,3,4,5], [2,7,1,9,10]))
+//console.log(mergeArrays([1,2,3,4,5], [2,7,1,9,10]))
 
 
 //9.Remove characters
@@ -160,7 +160,7 @@ const removeCharacters = (string, charsToRemove) =>{
                 equalto++;
             }
         }
-        console.log(changedString)
+       // console.log(changedString)
     }
     return changedString
 
@@ -184,4 +184,67 @@ const products = (arr) =>{
     }
     return prodArray;
 }
-console.log(products([1,3,9,4]))
+//console.log(products([1,3,9,4]))
+
+//11. 2D array
+
+const zeroify = (arr) =>{
+    var zeroedArray = [];
+    var containsZero = false;
+    var affectedRow ='';
+
+    for(let i=0;i<arr.length; i++){
+        containsZero = false;
+        for(let j=0;j<arr[i].length; j++){
+            if(arr[i][j] == 0){
+                containsZero = true
+            }
+        }
+        if(containsZero == true){
+            zeroedArray.push([0,0,0,0])
+            affectedRow = j;
+        }
+        else{
+            zeroedArray.push(arr[i])
+        }
+    }
+    return zeroedArray;
+}
+console.log(zeroify([[1,0,1,1,0],
+                     [0,1,1,1,0],
+                     [1,1,1,1,1],
+                     [1,0,1,1,1],
+                     [1,1,1,1,1]]))
+
+/*                      function zeroRowsColumns(mat){
+                        const zeroRows = [];
+                        const zeroCols = [];
+                    
+                        for (let i=0; i<mat.length; i++) {
+                            let row = mat[i];
+                            for (let j=0; j<row.length; j++) {
+                                const item = row[j];
+                                if (item === 0) {
+                                    zeroRows[i] = true;
+                                    zeroCols[j] = true;
+                                }
+                            }
+                        }
+                    
+                        for (let i=0; i<mat.length; i++) {
+                            let row = mat[i];
+                            for (let j=0; j<row.length; j++) {
+                                if (zeroRows[i] || zeroCols[j]) {
+                                    row[j] = 0;
+                                }
+                            }
+                        }
+                        return mat;
+                    } */
+
+// 12. String rotation
+
+                    function strRotation(string1, string2){
+                        return (string2 + string2).indexOf(string1) != -1;
+                    
+                    }

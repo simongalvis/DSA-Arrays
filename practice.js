@@ -147,3 +147,25 @@ console.log(mergeArrays([1,2,3,4,5], [2,7,1,9,10]))
 
 //9.Remove characters
 
+const removeCharacters = (string, charsToRemove) =>{
+    var equalto = 0;
+    var changedString = '';
+    for(let i=1; i<=string.length; i++){
+        if (equalto == 0){
+            changedString += string[i-1]
+        }
+        equalto = 0;
+        for(let j=0; j<charsToRemove.length; j++){
+            if(string[i] == charsToRemove[j]){
+                equalto++;
+            }
+        }
+        console.log(changedString)
+    }
+    return changedString
+
+}
+//console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+
+
+//10. Products

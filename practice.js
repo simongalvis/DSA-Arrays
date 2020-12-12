@@ -169,3 +169,19 @@ const removeCharacters = (string, charsToRemove) =>{
 
 
 //10. Products
+
+const products = (arr) =>{
+    var prodArray = [];
+    var product = 1;
+    for(let i=0;i<arr.length; i++){
+        product = 1;
+        for(let j=0;j<arr.length; j++){
+            if(arr[j] !== arr[i]){
+                product *= arr[j]
+            }
+        }
+        prodArray.push(product)
+    }
+    return prodArray;
+}
+console.log(products([1,3,9,4]))
